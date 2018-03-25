@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="vehicule_tree_view">
+      <field name="name">vehicule.tree</field>
+      <field name="model">inter_vehicule.vehicule</field>
+      <field name="type">tree</field>
+      <field name="view_mode">tree,form</field>
+      <field name="arch" type="xml">
+
+        <tree string="vehicule" editable="bottom">
+
+            <field name="sequence_id"  />
+            <field name="famille_id" attrs="{'readonly':[('bloque', '!=', 0),('is_manager', '=', False)]}" />
+            <field name="matricule_id" attrs="{'readonly':[('bloque', '!=', 0),('is_manager', '=', False)]}" />
+            <field name="anomalie" attrs="{'readonly':[('bloque', '!=', 0),('is_manager', '=', False)]}"/>
+            <field name="piece_id" attrs="{'readonly':[('bloque', '!=', 0),('is_manager', '=', False)]}" />
+            <field name="quantite" attrs="{'readonly':[('bloque', '!=', 0),('is_manager', '=', False)]}" />
+            <field name="cout_piece" attrs="{'readonly':[('bloque', '!=', 0),('is_manager', '=', False)]}" />
+            <field name="prestation" attrs="{'readonly':[('bloque', '!=', 0),('is_manager', '=', False)]}"/>
+            <field name="total_ht" readonly="1"/>
+            <field name="total_ttc" readonly="1"/>
+
+            <field name="bloque" invisible="1" attrs="{'readonly':[('bloque', '!=', 0)]}" />
+            <field name="is_manager" invisible="1" attrs="{'readonly':[('is_manager', '=', False)]}" />
+            <button name="blocker_saisie" string="Block" type="object"  />
+
+        </tree>
+
+
+
+
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="vehicule_form_view">
+      <field name="name">vehicule.form</field>
+      <field name="model">inter_vehicule.vehicule</field>
+      <field name="type">form</field>
+
+      <field name="arch" type="xml">
+        <form string="vehicule">
+             <sheet>
+                     <group>
+                            <!-- <field name="sequence_id" />-->
+                             <field name="famille_id" attrs="{'readonly':[('bloque', '!=', 0),('is_manager', '=', False)]}" />
+                             <field name="matricule_id" attrs="{'readonly':[('bloque', '!=', 0),('is_manager', '=', False)]}" />
+                             <field name="anomalie" attrs="{'readonly':[('bloque', '!=', 0),('is_manager', '=', False)]}"/>
+                             <field name="piece_id" attrs="{'readonly':[('bloque', '!=', 0),('is_manager', '=', False)]}"/>
+                             <field name="quantite" attrs="{'readonly':[('bloque', '!=', 0),('is_manager', '=', False)]}"/>
+                             <field name="cout_piece" attrs="{'readonly':[('bloque', '!=', 0),('is_manager', '=', False)]}"/>
+                             <field name="prestation" attrs="{'readonly':[('bloque', '!=', 0),('is_manager', '=', False)]}"/>
+                             <field name="total_ht" readonly="1" attrs="{'readonly':[('bloque', '!=', 0),('is_manager', '=', False)]}"/>
+                             <field name="total_ttc" readonly="1" attrs="{'readonly':[('bloque', '!=', 0),('is_manager', '=', False)]}" />
+
+                             <field name="bloque" invisible="1" attrs="{'readonly':[('bloque', '!=', 0)]}" />
+                             <field name="is_manager" invisible="1" attrs="{'readonly':[('is_manager', '=', False)]}" />
+
+                     </group>
+             </sheet>
+        </form>
+
+      </field>
+    </record>
+      <record id="vehicule_seq" model="ir.sequence">
+            <field name="name">vehicule_sequencer</field>
+            <field name="code">inter_vehicule.sequence</field>
+            <field name="prefix">V</field>
+            <field name="padding">5</field>
+        </record>
+    <record model="ir.actions.act_window" id="action_vehicule_form">
+      <field name="name">vehicule</field>
+      <field name="res_model">inter_vehicule.vehicule</field>
+    </record>
+    <menuitem name="Parc_Auto" id="vehicule_menu" />
+    <menuitem name="Inter_Vehicule" id="vehicule_group_menu" parent="vehicule_menu" />
+    <menuitem name="Vehicules" parent="vehicule_group_menu" id="vehicule_menu_mainform" action="action_vehicule_form" />
+  </data>
+</odoo>
+
+
+

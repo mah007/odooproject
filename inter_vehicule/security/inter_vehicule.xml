@@ -1,0 +1,62 @@
+<odoo>
+    <data>
+        <record id="inter_vehicule.group_manager" model="res.groups">
+            <field name="name">InterVehicule / Manager</field>
+        </record>
+        <record id="only_responsible_can_modify_vehicule" model="ir.rule">
+                <field name="name">Only Responsible can modify Vehicule</field>
+                <field name="model_id" ref="model_inter_vehicule_vehicule"/>
+                <field name="groups" eval="[(4, ref('inter_vehicule.group_manager'))]"/>
+                <field name="perm_read" eval="0"/>
+                <field name="perm_write" eval="1"/>
+                <field name="perm_create" eval="0"/>
+                <field name="perm_unlink" eval="1"/>
+                <field name="domain_force">
+                    ['|', ('is_manager','=',False),
+                          ('is_manager','=',user.id)]
+            </field>
+        </record>
+        <record id="only_responsible_can_modify_famille" model="ir.rule">
+                <field name="name">Only Responsible can modify Famille</field>
+                <field name="model_id" ref="model_inter_vehicule_famille"/>
+                <field name="groups" eval="[(4, ref('inter_vehicule.group_manager'))]"/>
+                <field name="perm_read" eval="0"/>
+                <field name="perm_write" eval="1"/>
+                <field name="perm_create" eval="0"/>
+                <field name="perm_unlink" eval="1"/>
+                <field name="domain_force">
+                    ['|', ('is_manager','=',False),
+                          ('is_manager','=',user.id)]
+            </field>
+        </record>
+        <record id="only_responsible_can_modify_piece" model="ir.rule">
+                <field name="name">Only Responsible can modify Piece</field>
+                <field name="model_id" ref="model_inter_vehicule_piece"/>
+                <field name="groups" eval="[(4, ref('inter_vehicule.group_manager'))]"/>
+                <field name="perm_read" eval="0"/>
+                <field name="perm_write" eval="1"/>
+                <field name="perm_create" eval="0"/>
+                <field name="perm_unlink" eval="1"/>
+                <field name="domain_force">
+                    ['|', ('is_manager','=',False),
+                          ('is_manager','=',user.id)]
+            </field>
+        </record>
+        <record id="only_responsible_can_modify_matricule" model="ir.rule">
+                <field name="name">Only Responsible can modify Matricule</field>
+                <field name="model_id" ref="model_inter_vehicule_matricule"/>
+                <field name="groups" eval="[(4, ref('inter_vehicule.group_manager'))]"/>
+                <field name="perm_read" eval="0"/>
+                <field name="perm_write" eval="1"/>
+                <field name="perm_create" eval="0"/>
+                <field name="perm_unlink" eval="1"/>
+                <field name="domain_force">
+                    ['|', ('is_manager','=',False),
+                          ('is_manager','=',user.id)]
+            </field>
+        </record>
+
+    </data>
+</odoo>
+
+

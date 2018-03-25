@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="customer_tree_view">
+      <field name="name">customer.tree</field>
+      <field name="model">map2.customer</field>
+      <field name="type">tree</field>
+      <field name="arch" type="xml">
+        <tree string="Customer">
+          <field name="name" />
+          <field name="address" />
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="customer_form_view">
+      <field name="name">customer.form</field>
+      <field name="model">map2.customer</field>
+      <field name="type">form</field>
+      <field name="arch" type="xml">
+        <form string="Customer">
+          <field name="name" />
+          <field name="address" />
+        </form>
+        <button name="locate_customer" string="Localiser" type="object" class="oe_highlight"/>
+        <div>
+          <iframe src="static/map/googlemap.html?longitude=34.681178&amp;latitude=-1.925503&amp;key=AIzaSyDK_egpQyswkCsCR5ENCnPhZBbqjMJFW_I" width="825px" height="500px" frameborder="0">
+          </iframe>
+        </div>
+      </field>
+    </record>
+    <record model="ir.actions.act_window" id="action_customer_form">
+      <field name="name">customer</field>
+      <field name="res_model">map2.customer</field>
+    </record>
+    <menuitem name="Customer" id="customer_menu" />
+    <menuitem name="Customer Group" id="customer_group_menu" parent="customer_menu" />
+    <menuitem name="Customers" parent="customer_group_menu" id="customer_menu_mainform" action="action_customer_form" />
+  </data>
+</odoo>
