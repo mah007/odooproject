@@ -1,0 +1,59 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <!--
+    <record model="ir.ui.view" id="parc_auto.list">
+      <field name="name">ParcAuto list</field>
+      <field name="model">parc_auto.parc_auto</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+    -->
+
+    <!-- actions opening views on models -->
+    <!--
+    <record model="ir.actions.act_window" id="parc_auto.action_window">
+      <field name="name">ParcAuto window</field>
+      <field name="res_model">parc_auto.parc_auto</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    -->
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="parc_auto.action_server">
+      <field name="name">ParcAuto server</field>
+      <field name="model_id" ref="model_parc_auto_parc_auto"/>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+    <!--
+    <menuitem name="ParcAuto" id="parc_auto.menu_root"/>
+    -->
+    <!-- menu categories -->
+    <!--
+    <menuitem name="Menu 1" id="parc_auto.menu_1" parent="parc_auto.menu_root"/>
+    <menuitem name="Menu 2" id="parc_auto.menu_2" parent="parc_auto.menu_root"/>
+    -->
+    <!-- actions -->
+    <!--
+    <menuitem name="List" id="parc_auto.menu_1_list" parent="parc_auto.menu_1"
+              action="parc_auto.action_window"/>
+    <menuitem name="Server to list" id="parc_auto" parent="parc_auto.menu_2"
+              action="parc_auto.action_server"/>
+    -->
+  </data>
+</odoo>
