@@ -82,5 +82,79 @@ class vehicule(models.Model) :
         self.state = 'dg'
 
 
+class demande(models.Model):
+    _name='parcauto.demande'
+    name = fields.Char(string="demande")
+    demande_id=fields.Char('Demande N°' , required=True)
+
+    client_id = fields.Many2one('parcauto.client', ondelete='set null', string="Client", index=True, required=True)
+
+    colis=fields.Char(required=True)
+    poids_total=fields.Integer(compute='_sum_poids_total')
+    volume_total=fields.Integer(required=True)
+    prix_total=fields.Integer(compute='_sum_prix_total')
+    ville=fields.Char(required=True)
+    pays = fields.Char(required=True)
+    destination = fields.Char( required=True)
+    produit_id = fields.Many2one('parcauto.produit', ondelete='set null', string="produit", index=True, required=True)
+    p_prix_unit = fields.Integer(related='produit_id.prix_unit')
+    p_poids_unit = fields.Integer(related='produit_id.poids_unit')
+
+    @api.one
+    def _sum_prix_total(self):
+        self.prix_total = self.volume_total * self.p_prix_unit
+
+    @api.one
+    def _sum_poids_total(self):
+        self.poids_total = self.volume_total * self.p_poids_unit
+
+    @api.model
+    def create(self, vals):
+        dem = self.env['ir.sequence'].next_by_code('demande.sequence') or '/'
+        vals['demande_id'] = dem
+        return super(demande, self).create(vals)
+
+
+
+class client(models.Model):
+    _name='parcauto.client'
+    name = fields.Char(string="client")
+    client_id=fields.Char('Client N°' , required=True)
+    nom=fields.Char(required=True)
+    adresse_cli=fields.Char(required=True)
+    ville_cli=fields.Char(required=True)
+    pays_cli=fields.Char(required=True)
+    demande_ids = fields.One2many(
+        'parcauto.demande', 'demande_id', string="Demandes")
+
+    @api.model
+    def create(self, vals):
+        dem = self.env['ir.sequence'].next_by_code('client.sequence') or '/'
+        vals['client_id'] = dem
+        return super(client, self).create(vals)
+
+
+class produit(models.Model):
+    _name='parcauto.produit'
+    name=fields.Char(string='Produits')
+    produit_id=fields.Char('Produit N°' , required=True)
+    prix_unit = fields.Integer(required=True)
+    poids_unit= fields.Integer(required=True)
+
+    @api.model
+    def create(self, vals):
+        prod = self.env['ir.sequence'].next_by_code('produit.sequence') or '/'
+        vals['produit_id'] = prod
+        return super(produit, self).create(vals)
+
+
+
+
+
+
+
+
+
+
 
 
