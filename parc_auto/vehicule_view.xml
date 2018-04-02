@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+
+  <record model="ir.ui.view" id="vehicule_tree_view">
+      <field name="name">vehicule.tree</field>
+      <field name="model">parcauto.vehicule</field>
+      <field name="type">tree</field>
+      <field name="view_mode">tree,form</field>
+      <field name="arch" type="xml">
+
+        <tree string="vehicule" >
+            <field name="sequence_id"  />
+            <field name="matricule"  />
+            <field name="marque"  />
+            <field name="modele"  />
+            <field name="activity"  />
+            <field name="etat" />
+            <field name="age"  />
+            <field name="compteur"  />
+            <field name="agence_id" />
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="vehicule_form_view">
+      <field name="name">vehicule.form</field>
+      <field name="model">parcauto.vehicule</field>
+      <field name="type">form</field>
+
+      <field name="arch" type="xml">
+        <form string="vehicule">
+             <sheet>
+                     <group>
+                            <field name="sequence_id" invisible="1" />
+                            <field name="matricule"  />
+                            <field name="marque"  />
+                            <field name="modele"  />
+                            <field name="activity"  />
+                            <field name="etat" />
+                            <field name="age"  />
+                            <field name="compteur"  />
+                            <field name="agence_id" />
+
+                     </group>
+             </sheet>
+        </form>
+      </field>
+    </record>
+
+      <record id="vehicule_seq" model="ir.sequence">
+            <field name="name">vehicule_sequencer</field>
+            <field name="code">vehicule.sequence</field>
+            <field name="prefix">V</field>
+            <field name="padding">5</field>
+      </record>
+
+
+      <record model="ir.actions.act_window" id="action_vehicule_form">
+      <field name="name">vehicule</field>
+      <field name="res_model">parcauto.vehicule</field>
+    </record>
+
+
+  </data>
+</odoo>

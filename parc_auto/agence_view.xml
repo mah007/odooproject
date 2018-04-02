@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
   <data>
-
-
-
-
-
-
-
     <record model="ir.ui.view" id="agence_tree_view">
       <field name="name">agence.tree</field>
       <field name="model">parcauto.agence</field>
@@ -63,144 +56,11 @@
     </record>
 
 
-
-
-
-
-
-
-
-
-
-       <record model="ir.ui.view" id="vehicule_tree_view">
-      <field name="name">vehicule.tree</field>
-      <field name="model">parcauto.vehicule</field>
-      <field name="type">tree</field>
-      <field name="view_mode">tree,form</field>
-      <field name="arch" type="xml">
-
-        <tree string="vehicule" >
-            <field name="sequence_id"  />
-            <field name="matricule"  />
-            <field name="marque"  />
-            <field name="modele"  />
-            <field name="activity"  />
-            <field name="etat" />
-            <field name="age"  />
-            <field name="compteur"  />
-            <field name="agence_id" />
-        </tree>
-      </field>
+    <record model="ir.actions.act_window" id="action_agence_form">
+      <field name="name">agence</field>
+      <field name="res_model">parcauto.agence</field>
     </record>
-
-    <record model="ir.ui.view" id="vehicule_form_view">
-      <field name="name">vehicule.form</field>
-      <field name="model">parcauto.vehicule</field>
-      <field name="type">form</field>
-
-      <field name="arch" type="xml">
-        <form string="vehicule">
-             <sheet>
-                     <group>
-                            <field name="sequence_id" invisible="1" />
-                            <field name="matricule"  />
-                            <field name="marque"  />
-                            <field name="modele"  />
-                            <field name="activity"  />
-                            <field name="etat" />
-                            <field name="age"  />
-                            <field name="compteur"  />
-                            <field name="agence_id" />
-
-                     </group>
-             </sheet>
-        </form>
-      </field>
-    </record>
-
-      <record id="vehicule_seq" model="ir.sequence">
-            <field name="name">vehicule_sequencer</field>
-            <field name="code">vehicule.sequence</field>
-            <field name="prefix">V</field>
-            <field name="padding">5</field>
-      </record>
-
-
-
-
-
-
-     <record model="ir.ui.view" id="demande_tree_view">
-      <field name="name">demande.tree</field>
-      <field name="model">parcauto.demande</field>
-      <field name="type">tree</field>
-      <field name="view_mode">tree,form</field>
-      <field name="arch" type="xml">
-
-
-        <tree string="demande" >
-            <field name="demande_id"  />
-            <field name="client_id"  />
-            <field name="colis"  />
-            <field name="poids_total"  />
-            <field name="produit_id" />
-            <field name="volume_total"  />
-            <field name="prix_total" sum="Total_prix" />
-            <field name="create_date" string="Date de Demande" readonly="1"  />
-            <field name="ville"  />
-            <field name="pays"  />
-            <field name="destination"/>
-
-        </tree>
-      </field>
-    </record>
-
-    <record model="ir.ui.view" id="demande_form_view">
-      <field name="name">demande.form</field>
-      <field name="model">parcauto.demande</field>
-      <field name="type">form</field>
-
-      <field name="arch" type="xml">
-        <form string="demande">
-             <sheet>
-
-
-                         <group>
-                            <group string="Demande de Clients">
-                                <field name="client_id"/>
-                                <field name="create_date" string="Date de Demande"/>
-                                <field name="ville"/>
-                                <field name="pays"/>
-                            </group>
-                            <group string="Details de Marchandise">
-                                <field name="colis" string="Colis"/>
-                                <field name="poids_total" string="Poids(KG)"/>
-                                <field name="produit_id" />
-                                <field name="volume_total"/>
-                                <field name="destination"/>
-                                <field name="prix_total"/>
-
-                            </group>
-                        </group>
-
-
-             </sheet>
-        </form>
-      </field>
-    </record>
-
-
-      <record id="demande_seq" model="ir.sequence">
-            <field name="name">demande_sequencer</field>
-            <field name="code">demande.sequence</field>
-            <field name="prefix">DC/</field>
-            <field name="padding">5</field>
-      </record>
-
-
-
-
-      <record model="ir.ui.view" id="produit_tree_view">
+ <record model="ir.ui.view" id="produit_tree_view">
       <field name="name">produit.tree</field>
       <field name="model">parcauto.produit</field>
       <field name="type">tree</field>
@@ -217,7 +77,7 @@
     </record>
 
     <record model="ir.ui.view" id="agence_form_view">
-      <field name="name">agence.form</field>
+      <field name="name">produit.form</field>
       <field name="model">parcauto.produit</field>
       <field name="type">form</field>
 
@@ -241,48 +101,12 @@
             <field name="prefix">Prod/</field>
             <field name="padding">5</field>
       </record>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <record model="ir.actions.act_window" id="action_agence_form">
-      <field name="name">agence</field>
-      <field name="res_model">parcauto.agence</field>
-    </record>
-    <record model="ir.actions.act_window" id="action_vehicule_form">
-      <field name="name">vehicule</field>
-      <field name="res_model">parcauto.vehicule</field>
-    </record>
-
-      <record model="ir.actions.act_window" id="action_demande_form">
-      <field name="name">demande</field>
-      <field name="res_model">parcauto.demande</field>
-    </record>
-      <record model="ir.actions.act_window" id="action_produit_form">
+       <record model="ir.actions.act_window" id="action_produit_form">
       <field name="name">produit</field>
       <field name="res_model">parcauto.produit</field>
     </record>
+
+
 
     <menuitem name="Parc_Auto" id="agence_menu" />
     <menuitem name="Parc Automobil" id="agence_group_menu" parent="agence_menu" />

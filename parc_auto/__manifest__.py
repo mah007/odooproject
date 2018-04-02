@@ -25,7 +25,10 @@
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
-        'agence_view.xml'
+        'agence_view.xml',
+        'vehicule_view.xml',
+        'demande_view.xml'
+
     ],
     # only loaded in demonstration mode
     'demo': [

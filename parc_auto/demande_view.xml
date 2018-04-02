@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+
+     <record model="ir.ui.view" id="demande_tree_view">
+      <field name="name">demande.tree</field>
+      <field name="model">parcauto.demande</field>
+      <field name="type">tree</field>
+      <field name="view_mode">tree,form</field>
+      <field name="arch" type="xml">
+
+
+        <tree string="demande" >
+            <field name="demande_id"  />
+            <field name="client_id"  />
+            <field name="produit_id" string="Produits"/>
+            <field name="poids_total" sum="Total_poids"  />
+            <field name="volume_total" sum="Total_volume" />
+            <field name="prix_total" sum="Total_prix" />
+            <field name="destination" string="Adresse"/>
+            <field name="ville"  />
+            <field name="create_date" string="Date de Demande" readonly="1"  />
+
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="demande_form_view">
+      <field name="name">demande.form</field>
+      <field name="model">parcauto.demande</field>
+      <field name="type">form</field>
+
+      <field name="arch" type="xml">
+        <form string="demande">
+             <sheet>
+
+
+                         <group>
+                            <group string="Demande de Clients">
+                                <field name="client_id"/>
+                                <field name="create_date" string="Date de Demande"/>
+                                <field name="ville"/>
+                            </group>
+                            <group string="Details de Marchandise">
+                                <field name="poids_total" string="Poids(KG)"/>
+                                <field name="produit_id" />
+                                <field name="volume_total"/>
+                                <field name="destination" string="Adresse"/>
+                                <field name="prix_total"/>
+
+                            </group>
+                        </group>
+
+
+             </sheet>
+        </form>
+      </field>
+    </record>
+
+
+      <record id="demande_seq" model="ir.sequence">
+            <field name="name">demande_sequencer</field>
+            <field name="code">demande.sequence</field>
+            <field name="prefix">DC/</field>
+            <field name="padding">5</field>
+      </record>
+
+      <record model="ir.actions.act_window" id="action_demande_form">
+      <field name="name">demande</field>
+      <field name="res_model">parcauto.demande</field>
+    </record>
+
+
+
+  </data>
+</odoo>
