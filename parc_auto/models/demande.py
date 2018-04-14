@@ -6,10 +6,7 @@ class demande(models.Model):
     _name='parcauto.demande'
     name = fields.Char(string="demande")
     demande_id=fields.Char('Demande N°' , required=True)
-
     client_id = fields.Many2one('parcauto.client', ondelete='set null', string="Client", index=True, required=True)
-
-
     poids_total=fields.Integer(compute='_sum_poids_total')
     volume_total=fields.Integer(required=True)
     prix_total=fields.Integer(compute='_sum_prix_total')

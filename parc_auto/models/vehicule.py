@@ -22,6 +22,8 @@ class vehicule(models.Model) :
     agence_id = fields.Many2one('parcauto.agence', ondelete='set null', string="Agence", index=True, required=True)
 
 
+
+
     activity = fields.Selection([
         ('mes', "Messagerie"),
         ('dt', "DT"),

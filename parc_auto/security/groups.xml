@@ -1,0 +1,17 @@
+<odoo>
+    <data>
+        <record id="group_user" model="res.groups">
+            <field name="name">ParcAuto / User</field>
+        </record>
+
+		<record id="group_manager" model="res.groups">
+            <field name="name">ParcAuto / Manager</field>
+        </record>
+
+
+        <record id="group_livreur" model="res.groups">
+            <field name="name">ParcAuto / Livreur</field>
+        </record>
+
+    </data>
+</odoo>

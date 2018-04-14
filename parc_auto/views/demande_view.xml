@@ -12,7 +12,7 @@
 
         <tree string="demande" >
             <field name="demande_id"  />
-            <field name="client_id"  />
+            <field name="client_id"  invisible="1" />
             <field name="produit_id" string="Produits"/>
             <field name="poids_total" sum="Total_poids"  />
             <field name="volume_total" sum="Total_volume" />

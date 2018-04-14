@@ -5,12 +5,10 @@ from odoo import models, fields, api
 
 class client(models.Model):
     _name='parcauto.client'
-    name = fields.Char(string="client")
-    client_id=fields.Char('Client N°' , required=True)
-    nom=fields.Char(required=True)
-    adresse_cli=fields.Char(required=True)
-    ville_cli=fields.Char(required=True)
-    pays_cli=fields.Char(required=True)
+    name = fields.Char(required=True , string="Nom")
+    client_id=fields.Char(invisible="1")
+    adresse_cli=fields.Char(required=True ,string="Adresse")
+    ville_cli=fields.Char(required=True , string="Ville")
     demande_ids = fields.One2many(
         'parcauto.demande', 'demande_id', string="Demandes")
 

@@ -32,6 +32,7 @@
         <form string="vehicule">
              <sheet>
                      <group>
+                            <field name="name" />
                             <field name="sequence_id" invisible="1" />
                             <field name="matricule"  />
                             <field name="marque"  />

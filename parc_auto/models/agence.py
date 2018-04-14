@@ -13,10 +13,11 @@ class agence(models.Model):
     laltitude = fields.Char(required=True)
     adresse = fields.Char(required=True)
     ville = fields.Char(required=True)
-    pays = fields.Char(required=True)
+
 
     vehicule_ids = fields.One2many(
         'parcauto.vehicule', 'agence_id', string="Vehicules")
+
 
     @api.one
     def _count_vehicules(self):

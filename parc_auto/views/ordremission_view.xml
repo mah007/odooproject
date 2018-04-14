@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+
+  <record model="ir.ui.view" id="ordremission_tree_view">
+      <field name="name">ordremission.tree</field>
+      <field name="model">parcauto.ordremission</field>
+      <field name="type">tree</field>
+      <field name="view_mode">tree,form</field>
+      <field name="arch" type="xml">
+
+        <tree string="ordremission" >
+            <field name="ordre_id"  />
+            <field name="state" readonly="1" />
+            <field name="chauffeur_id"  />
+            <field name="agence_dep"  />
+            <field name="agence_arr"  />
+            <field name="client_id"  />
+            <field name="produit_id"  />
+            <field name="vehicule_id"  />
+
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="ordremission_form_view">
+      <field name="name">ordremission.form</field>
+      <field name="model">parcauto.ordremission</field>
+      <field name="type">form</field>
+
+      <field name="arch" type="xml">
+
+        <form string="ordremission">
+            <header>
+                <button name="draft" type="workflow"
+                        string="Reset to draft"
+                        states="submitted" groups="parc_auto.group_manager"/>
+                <button name="submit" type="workflow"
+                        string="Submit" states="draft"
+                        class="oe_highlight" groups="parc_auto.group_user"/>
+                <button name="confirm" type="workflow"
+                        string="Confirm" states="submitted"
+                        class="oe_highlight" groups="parc_auto.group_manager"/>
+                <button name="done" type="workflow"
+                        string="Mark as done" states="confirmed"
+                        class="oe_highlight" groups="parc_auto.group_livreur"/>
+                <field name="state" widget="statusbar"/>
+            </header>
+             <sheet>
+                     <group>
+                         <group string="Choix du Véhicule">
+                             <field name="vehicule_id"  />
+                         </group>
+                         <group string="Choix du Chauffeur">
+                             <field name="chauffeur_id"  />
+                         </group>
+                         <group string="Informations Client">
+                             <field name="client_id"  />
+                             <field name="produit_id"  />
+                         </group>
+                         <group string="Départ">
+                             <field name="agence_dep"  />
+                             <field name="create_date" string="Date Départ"/>
+                         </group>
+                         <group string="Arrivée">
+                             <field name="agence_arr"  />
+                             <field name="create_date" string="Date Arrivée"/>
+                         </group>
+                     </group>
+             </sheet>
+        </form>
+      </field>
+    </record>
+
+      <record id="ordremission_seq" model="ir.sequence">
+            <field name="name">ordremissione_sequencer</field>
+            <field name="code">ordremission.sequence</field>
+            <field name="prefix">OM/</field>
+            <field name="padding">1</field>
+      </record>
+
+      <record model="ir.actions.act_window" id="action_ordremission_form">
+          <field name="name">ordremission</field>
+          <field name="res_model">parcauto.ordremission</field>
+      </record>
+
+
+
+  </data>
+</odoo>
