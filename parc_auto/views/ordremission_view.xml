@@ -48,6 +48,9 @@
             </header>
              <sheet>
                      <group>
+                         <group string="Choix du Nom">
+                             <field name="name"  />
+                         </group>
                          <group string="Choix du Véhicule">
                              <field name="vehicule_id"  />
                          </group>
