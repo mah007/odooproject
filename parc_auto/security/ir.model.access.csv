@@ -17,3 +17,6 @@ produit_livreur,produit livreur,model_parcauto_produit,group_livreur,1,1,0,0
 vehicule_user,vehicule user,model_parcauto_vehicule,group_user,1,1,1,0
 vehicule_manager,vehicule manager,model_parcauto_vehicule,group_manager,1,1,0,0
 vehicule_livreur,vehicule livreur,model_parcauto_vehicule,group_livreur,1,1,0,0
+
+
+
