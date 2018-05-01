@@ -11,7 +11,7 @@ class demande(models.Model):
     volume_total=fields.Integer(required=True)
     prix_total=fields.Integer(compute='_sum_prix_total',store=True)
     ville=fields.Many2one('parcauto.ville', ondelete='set null', string="Ville", index=True, required=True)
-    destination = fields.Char( required=True)
+    destination = fields.Char(required=True)
     produit_id = fields.Many2one('parcauto.produit', ondelete='set null', string="Produit", index=True, required=True)
     p_prix_unit = fields.Integer(related='produit_id.prix_unit')
     p_poids_unit = fields.Integer(related='produit_id.poids_unit')

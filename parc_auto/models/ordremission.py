@@ -44,8 +44,8 @@ class ordremission(models.Model):
     def action_done(self):
         self.state = 'done'
 
-class chauffeur(models.Model):
-    _name='parcauto.chauffeur'
-    name=fields.Char(string="Nom")
+    
+
+
 
 

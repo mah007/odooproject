@@ -45,7 +45,7 @@
                                 <field name="poids_total" string="Poids(KG)"/>
                                 <field name="produit_id" />
                                 <field name="volume_total"/>
-                                <field name="destination" string="Adresse"/>
+                                <field name="destination" widget="place_autocomplete" class="oe_inline"/>
                                 <field name="prix_total"/>
 
                             </group>
