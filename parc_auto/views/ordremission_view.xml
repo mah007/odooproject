@@ -18,7 +18,7 @@
             <field name="client_id"  />
             <field name="produit_id"  />
             <field name="vehicule_id"  />
-
+            <button name="main" string="CVRP" type="object"  />
         </tree>
       </field>
     </record>
@@ -31,6 +31,7 @@
       <field name="arch" type="xml">
 
         <form string="ordremission">
+
             <header>
                 <button name="draft" type="workflow"
                         string="Reset to draft"
@@ -70,6 +71,7 @@
                              <field name="create_date" string="Date Arrivée"/>
                          </group>
                      </group>
+
              </sheet>
         </form>
       </field>
