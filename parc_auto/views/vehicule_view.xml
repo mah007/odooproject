@@ -18,7 +18,6 @@
             <field name="etat" />
             <field name="age"  />
             <field name="compteur"  />
-            <field name="agence_id" />
         </tree>
       </field>
     </record>
@@ -41,7 +40,6 @@
                             <field name="etat" />
                             <field name="age"  />
                             <field name="compteur"  />
-                            <field name="agence_id" />
 
                      </group>
              </sheet>

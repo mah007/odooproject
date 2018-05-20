@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from . import models
-from . import agence
+# from . import agence
 from . import vehicule
 from . import demande
 from . import client

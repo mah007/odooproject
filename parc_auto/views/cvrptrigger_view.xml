@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+
+
+      <!-- <record model="ir.actions.act_window" id="action_cvrptrigger_form"> -->
+          <!-- <field name="name">cvrptrigger</field> -->
+      <!-- </record> -->
+
+
+ <!-- <record model="ir.ui.view" id="ordremission_form_view"> -->
+      <!-- <field name="name">cvrptrigger.form</field> -->
+      <!-- <field name="type">form</field> -->
+
+      <!-- <field name="arch" type="xml"> -->
+
+        <!-- <form string="ordremission"> -->
+
+
+             <!-- <sheet> -->
+                <!-- <button name="main" string="CVRP" type="object"  /> -->
+             <!-- </sheet> -->
+        <!-- </form> -->
+      <!-- </field> -->
+    <!-- </record> -->
+  </data>
+</odoo>

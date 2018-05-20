@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="agence_tree_view">
+      <field name="name">client.tree</field>
+      <field name="model">parcauto.client</field>
+      <field name="type">tree</field>
+      <field name="view_mode">tree,form</field>
+      <field name="arch" type="xml">
+
+        <tree string="client" >
+
+            <field name="client_id" />
+            <field name="name"  />
+            <field name="prenom"  />
+            <field name="adresse_cli"  />
+
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="client_form_view">
+      <field name="name">client.form</field>
+      <field name="model">parcauto.client</field>
+      <field name="type">form</field>
+
+      <field name="arch" type="xml">
+        <form string="agence">
+             <sheet>
+                <group>
+                 <field name="name" />
+                 <field name="prenom" />
+                 <field name="adresse_cli" />
+                </group>
+             </sheet>
+        </form>
+      </field>
+    </record>
+
+
+    <record model="ir.actions.act_window" id="action_client_form">
+      <field name="name">client</field>
+      <field name="res_model">parcauto.client</field>
+    </record>
+
+      <record id="client_seq" model="ir.sequence">
+            <field name="name">client_sequencer</field>
+            <field name="code">client.sequence</field>
+            <field name="prefix">CL</field>
+            <field name="padding">1</field>
+      </record>
+
+  </data>
+</odoo>
+
+
+

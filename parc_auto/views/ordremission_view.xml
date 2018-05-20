@@ -13,12 +13,7 @@
             <field name="ordre_id"  />
             <field name="state" readonly="1" />
             <field name="chauffeur_id"  />
-            <field name="agence_dep"  />
-            <field name="agence_arr"  />
-            <field name="client_id"  />
-            <field name="produit_id"  />
             <field name="vehicule_id"  />
-            <button name="main" string="CVRP" type="object"  />
         </tree>
       </field>
     </record>
@@ -58,16 +53,13 @@
                          <group string="Choix du Chauffeur">
                              <field name="chauffeur_id"  />
                          </group>
-                         <group string="Informations Client">
-                             <field name="client_id"  />
-                             <field name="produit_id"  />
+                         <group string="Demandes">
+                             <field name="demande_ids"  />
                          </group>
                          <group string="Départ">
-                             <field name="agence_dep"  />
                              <field name="create_date" string="Date Départ"/>
                          </group>
                          <group string="Arrivée">
-                             <field name="agence_arr"  />
                              <field name="create_date" string="Date Arrivée"/>
                          </group>
                      </group>

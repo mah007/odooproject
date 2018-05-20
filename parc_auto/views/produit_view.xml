@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+      <record model="ir.ui.view" id="produit_tree_view">
+      <field name="name">produit.tree</field>
+      <field name="model">parcauto.produit</field>
+      <field name="type">tree</field>
+      <field name="view_mode">tree,form</field>
+      <field name="arch" type="xml">
+
+        <tree string="produit" >
+            <field name="produit_id"   />
+            <field name="name"  />
+            <field name="prix_unit"  />
+            <field name="poids_unit" />
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="agence_form_view">
+      <field name="name">produit.form</field>
+      <field name="model">parcauto.produit</field>
+      <field name="type">form</field>
+
+      <field name="arch" type="xml">
+        <form string="produit">
+             <sheet>
+                     <group>
+                         <field name="name"  />
+                         <field name="prix_unit"  />
+                         <field name="poids_unit" />
+
+                     </group>
+             </sheet>
+        </form>
+      </field>
+    </record>
+
+      <record id="produit_seq" model="ir.sequence">
+            <field name="name">produit_sequencer</field>
+            <field name="code">produit.sequence</field>
+            <field name="prefix">Prod/</field>
+            <field name="padding">5</field>
+      </record>
+       <record model="ir.actions.act_window" id="action_produit_form">
+      <field name="name">produit</field>
+      <field name="res_model">parcauto.produit</field>
+    </record>
+
+  </data>
+</odoo>

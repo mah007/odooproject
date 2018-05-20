@@ -14,12 +14,13 @@
             <field name="demande_id"  />
             <field name="client_id"  invisible="1" />
             <field name="produit_id" string="Produits"/>
+            <field name="adresse" string="Adresse"/>
             <field name="poids_total" sum="Total_poids"  />
             <field name="volume_total" sum="Total_volume" />
             <field name="prix_total" sum="Total_prix" />
-            <field name="destination" string="Adresse"/>
-            <field name="ville"  />
             <field name="create_date" string="Date de Demande" readonly="1"  />
+            <field name="state" string="Etat" readonly="1"  />
+            <button name="main" string="CVRP" type="object"  />
 
         </tree>
       </field>
@@ -39,15 +40,12 @@
                             <group string="Demande de Clients">
                                 <field name="client_id"/>
                                 <field name="create_date" string="Date de Demande"/>
-                                <field name="ville"/>
                             </group>
                             <group string="Details de Marchandise">
-                                <field name="poids_total" string="Poids(KG)"/>
                                 <field name="produit_id" />
                                 <field name="volume_total"/>
-                                <field name="destination" widget="place_autocomplete" class="oe_inline"/>
+                                <field name="poids_total" string="Poids(KG)"/>
                                 <field name="prix_total"/>
-
                             </group>
                         </group>
 

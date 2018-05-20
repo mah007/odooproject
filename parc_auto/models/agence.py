@@ -9,8 +9,8 @@ class agence(models.Model):
     name=fields.Char(required=True)
     nombre_vehicule = fields.Integer(compute='_count_vehicules')
     descriprion = fields.Char(required=True)
-    longtitude = fields.Char(required=True)
-    laltitude = fields.Char(required=True)
+    longtitude = fields.Char()
+    laltitude = fields.Char()
     adresse = fields.Char(required=True)
     ville = fields.Char(required=True)
 

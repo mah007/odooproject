@@ -8,21 +8,16 @@ class vehicule(models.Model) :
     sequence_id = fields.Char('Sequence', readonly=True)
     etat = fields.Selection([
         ('disponible', "Disponible"),
-        ('mission', "En Mission"),
-        ('reparation', "En Réparation"),
+        ('enmission', "En Mission"),
+        ('enreparation', "En Réparation"),
     ], default='disponible')
 
     matricule = fields.Char(required=True)
     marque = fields.Char(required=True)
     modele = fields.Char(required=True)
 
-    age= fields.Char(required=True , string="Age(Ans)")
-    compteur = fields.Char(required=True , string="Compteur(Km)")
-
-    agence_id = fields.Many2one('parcauto.agence', ondelete='set null', string="Agence", index=True, required=True)
-
-
-
+    age= fields.Char(required=True , string="Age (Ans)")
+    compteur = fields.Char(required=True , string="Compteur (Km)")
 
     activity = fields.Selection([
         ('mes', "Messagerie"),

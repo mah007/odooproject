@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+
+      <menuitem name="Parc Auto" id="agence_menu" />
+        <menuitem name="Parc Automobile" id="parc_group_menu" parent="agence_menu" />
+          <!-- <menuitem name="Agences" parent="parc_group_menu" id="agence_menu_mainform" action="action_agence_form" /> -->
+          <menuitem name="Véhicules" parent="parc_group_menu" id="vehicule_menu_mainform" action="action_vehicule_form" />
+          <menuitem name="Clients" parent="parc_group_menu" id="client_menu_mainform" action="action_client_form" />
+
+      <menuitem name="Missions" id="mission_group_menu" parent="agence_menu" />
+        <menuitem name="Produits" parent="mission_group_menu" id="produit_menu_mainform" action="action_produit_form" />
+        <menuitem name="Demandes Clients" parent="mission_group_menu" id="demande_menu_mainform" action="action_demande_form" />
+        <menuitem name="Ordres de Mission" parent="mission_group_menu" id="ordremission_menu_mainform" action="action_ordremission_form" />
+
+      <!-- <menuitem name="Tournée" id="cvrptrigger_group_menu" parent="agence_menu" /> -->
+        <!-- <menuitem name="Calcul de tournée" parent="cvrptrigger_group_menu" id="cvrptrigger_menu_mainform" action="action_cvrptrigger_form" /> -->
+
+
+  </data>
+</odoo>

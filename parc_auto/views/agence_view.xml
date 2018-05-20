@@ -18,7 +18,6 @@
             <field name="adresse" />
             <field name="ville" />
 
-
         </tree>
       </field>
     </record>
@@ -31,25 +30,23 @@
       <field name="arch" type="xml">
         <form string="agence">
              <sheet>
-                     <group>
-                            <!-- <field name="sequence_id" />-->
-                             <field name="name"  />
-                             <field name="nombre_vehicule" />
-                             <field name="descriprion" />
-                             <field name="longtitude" />
-                             <field name="laltitude"/>
-                             <field name="adresse"/>
-                             <field name="ville" />
-                             <notebook>
-                                 <page string="Vehicules">
-                                     <field name="vehicule_ids">
-                                        <tree string="Registered vehicules">
-                                            <field name="name"/>
-                                        </tree>
-                                     </field>
-                                  </page>
-                             </notebook>
-                     </group>
+                 <group>
+                    <!-- <field name="sequence_id" />-->
+                     <field name="name"  />
+                     <field name="nombre_vehicule" />
+                     <field name="descriprion" />
+                     <field name="adresse"/>
+                     <field name="ville" />
+                     <notebook>
+                     <page string="Vehicules">
+                     <field name="vehicule_ids">
+                        <tree string="Registered vehicules">
+                            <field name="name"/>
+                        </tree>
+                     </field>
+                      </page>
+                     </notebook>
+                 </group>
              </sheet>
         </form>
       </field>
@@ -60,70 +57,6 @@
       <field name="name">agence</field>
       <field name="res_model">parcauto.agence</field>
     </record>
- <record model="ir.ui.view" id="produit_tree_view">
-      <field name="name">produit.tree</field>
-      <field name="model">parcauto.produit</field>
-      <field name="type">tree</field>
-      <field name="view_mode">tree,form</field>
-      <field name="arch" type="xml">
-
-        <tree string="produit" >
-            <field name="produit_id"   />
-            <field name="name"  />
-            <field name="prix_unit"  />
-            <field name="poids_unit" />
-        </tree>
-      </field>
-    </record>
-
-    <record model="ir.ui.view" id="agence_form_view">
-      <field name="name">produit.form</field>
-      <field name="model">parcauto.produit</field>
-      <field name="type">form</field>
-
-      <field name="arch" type="xml">
-        <form string="produit">
-             <sheet>
-                     <group>
-                         <field name="name"  />
-                         <field name="prix_unit"  />
-                         <field name="poids_unit" />
-
-                     </group>
-             </sheet>
-        </form>
-      </field>
-    </record>
-
-      <record id="produit_seq" model="ir.sequence">
-            <field name="name">produit_sequencer</field>
-            <field name="code">produit.sequence</field>
-            <field name="prefix">Prod/</field>
-            <field name="padding">5</field>
-      </record>
-       <record model="ir.actions.act_window" id="action_produit_form">
-      <field name="name">produit</field>
-      <field name="res_model">parcauto.produit</field>
-    </record>
-
-
-
-    <menuitem name="Parc_Auto" id="agence_menu" />
-      <menuitem name="Parc Automobile" id="parc_group_menu" parent="agence_menu" />
-        <menuitem name="Agences" parent="parc_group_menu" id="agence_menu_mainform" action="action_agence_form" />
-        <menuitem name="Vehicules" parent="parc_group_menu" id="vehicule_menu_mainform" action="action_vehicule_form" />
-
-      <menuitem name="Missions" id="mission_group_menu" parent="agence_menu" />
-        <menuitem name="Produits" parent="mission_group_menu" id="produit_menu_mainform" action="action_produit_form" />
-        <menuitem name="Demandes Clients" parent="mission_group_menu" id="demande_menu_mainform" action="action_demande_form" />
-        <menuitem name="Ordres de Mission" parent="mission_group_menu" id="ordremission_menu_mainform" action="action_ordremission_form" />
-
-
-
-
-
-
-
 
 
   </data>
