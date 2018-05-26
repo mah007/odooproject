@@ -28,6 +28,7 @@
         'views/client_view.xml',
         #'views/agence_view.xml',
         'views/vehicule_view.xml',
+        'views/chauffeur_view.xml',
         'views/demande_view.xml',
         'views/ordremission_view.xml',
         'views/produit_view.xml',

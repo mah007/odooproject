@@ -7,6 +7,7 @@
           <!-- <menuitem name="Agences" parent="parc_group_menu" id="agence_menu_mainform" action="action_agence_form" /> -->
           <menuitem name="Véhicules" parent="parc_group_menu" id="vehicule_menu_mainform" action="action_vehicule_form" />
           <menuitem name="Clients" parent="parc_group_menu" id="client_menu_mainform" action="action_client_form" />
+          <menuitem name="Chauffeurs" parent="parc_group_menu" id="chauffeur_menu_mainform" action="action_chauffeur_form" />
 
       <menuitem name="Missions" id="mission_group_menu" parent="agence_menu" />
         <menuitem name="Produits" parent="mission_group_menu" id="produit_menu_mainform" action="action_produit_form" />

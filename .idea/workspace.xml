@@ -4,21 +4,11 @@
     <list default="true" id="977e636a-fda0-4732-83c3-eeb900a6ebd2" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/parc_auto/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/parc_auto/__manifest__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parc_auto/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/parc_auto/models/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parc_auto/models/agence.py" beforeDir="false" afterPath="$PROJECT_DIR$/parc_auto/models/agence.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/parc_auto/models/chauffeur.py" beforeDir="false" afterPath="$PROJECT_DIR$/parc_auto/models/chauffeur.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parc_auto/models/client.py" beforeDir="false" afterPath="$PROJECT_DIR$/parc_auto/models/client.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/parc_auto/models/demande.py" beforeDir="false" afterPath="$PROJECT_DIR$/parc_auto/models/demande.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/parc_auto/models/ordremission.py" beforeDir="false" afterPath="$PROJECT_DIR$/parc_auto/models/ordremission.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parc_auto/models/produit.py" beforeDir="false" afterPath="$PROJECT_DIR$/parc_auto/models/produit.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parc_auto/models/vehicule.py" beforeDir="false" afterPath="$PROJECT_DIR$/parc_auto/models/vehicule.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parc_auto/static/src/js/tree_view_button.js" beforeDir="false" afterPath="$PROJECT_DIR$/parc_auto/static/src/js/tree_view_button.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parc_auto/static/src/xml/tree_view_button.xml" beforeDir="false" afterPath="$PROJECT_DIR$/parc_auto/static/src/xml/tree_view_button.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parc_auto/views/agence_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/parc_auto/views/agence_view.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parc_auto/views/demande_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/parc_auto/views/demande_view.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parc_auto/views/menu_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/parc_auto/views/menu_view.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/parc_auto/views/ordremission_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/parc_auto/views/ordremission_view.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parc_auto/views/tree_view_asset.xml" beforeDir="false" afterPath="$PROJECT_DIR$/parc_auto/views/tree_view_asset.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parc_auto/views/vehicule_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/parc_auto/views/vehicule_view.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,29 +18,26 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/packageDoc$odoo_gui.coverage" NAME="odoo-gui Coverage Results" MODIFIED="1526841776594" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../odoo-10.0" />
+    <SUITE FILE_PATH="coverage/packageDoc$odoo_gui.coverage" NAME="odoo-gui Coverage Results" MODIFIED="1527350532452" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../odoo-10.0" />
     <SUITE FILE_PATH="coverage/packageDoc$odoo.coverage" NAME="odoo-gui Coverage Results" MODIFIED="1524513063806" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../odoo-10.0" />
     <SUITE FILE_PATH="coverage/packageDoc$odoo_shell.coverage" NAME="odoo-shell Coverage Results" MODIFIED="1526838147098" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../odoo-10.0" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="client.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/parc_auto/models/client.py">
+      <file leaf-file-name="ordremission.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/parc_auto/models/ordremission.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="11" column="15" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="15" />
+            <state relative-caret-position="537">
+              <caret line="50" column="19" selection-start-line="50" selection-start-column="19" selection-end-line="50" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="demande.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/parc_auto/models/demande.py">
+      <file leaf-file-name="chauffeur_view.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/parc_auto/views/chauffeur_view.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="383">
-              <caret line="138" selection-start-line="138" selection-end-line="138" />
-              <folding>
-                <element signature="e#25#61#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="504">
+              <caret line="31" column="21" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -58,17 +45,35 @@
       <file leaf-file-name="menu_view.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/parc_auto/views/menu_view.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="79" selection-start-line="10" selection-start-column="79" selection-end-line="10" selection-end-column="79" />
+            <state relative-caret-position="162">
+              <caret line="9" column="125" selection-start-line="9" selection-start-column="125" selection-end-line="9" selection-end-column="125" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ordremission.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/parc_auto/models/ordremission.py">
+      <file leaf-file-name="__manifest__.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/parc_auto/__manifest__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="272">
+              <caret line="30" column="35" lean-forward="true" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="chauffeur.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/parc_auto/models/chauffeur.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="5" column="29" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="demande.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/parc_auto/models/demande.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="22" column="11" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -76,17 +81,17 @@
       <file leaf-file-name="ordremission_view.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/parc_auto/views/ordremission_view.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="41" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
+            <state relative-caret-position="384">
+              <caret line="58" column="60" lean-forward="true" selection-start-line="58" selection-start-column="60" selection-end-line="58" selection-end-column="60" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="client_view.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/parc_auto/views/client_view.xml">
+      <file leaf-file-name="demande_view.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/parc_auto/views/demande_view.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="833">
-              <caret line="49" column="43" selection-start-line="49" selection-start-column="43" selection-end-line="49" selection-end-column="43" />
+            <state relative-caret-position="288">
+              <caret line="16" column="52" selection-start-line="16" selection-start-column="52" selection-end-line="16" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -94,26 +99,8 @@
       <file leaf-file-name="vehicule.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/parc_auto/models/vehicule.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="66" selection-start-line="19" selection-start-column="66" selection-end-line="19" selection-end-column="66" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="vehicule_view.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/parc_auto/views/vehicule_view.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="833">
-              <caret line="49" column="11" selection-start-line="49" selection-start-column="6" selection-end-line="54" selection-end-column="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="agence_view.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/parc_auto/views/agence_view.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="36" column="49" selection-start-line="36" selection-start-column="49" selection-end-line="36" selection-end-column="49" />
+            <state relative-caret-position="161">
+              <caret line="10" column="13" lean-forward="true" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -138,7 +125,6 @@
         <option value="$PROJECT_DIR$/parc_auto/static/src/xml/tree_view_button.xml" />
         <option value="$PROJECT_DIR$/parc_auto/views/tree_view_asset.xml" />
         <option value="$PROJECT_DIR$/parc_auto/static/src/js/tree_view_button.js" />
-        <option value="$PROJECT_DIR$/parc_auto/models/chauffeur.py" />
         <option value="$PROJECT_DIR$/parc_auto/views/cvrptrigger_view.xml" />
         <option value="$PROJECT_DIR$/parc_auto/models/agence.py" />
         <option value="$PROJECT_DIR$/parc_auto/views/agence_view.xml" />
@@ -146,14 +132,16 @@
         <option value="$PROJECT_DIR$/parc_auto/models/__init__.py" />
         <option value="$PROJECT_DIR$/parc_auto/models/vehicule.py" />
         <option value="$PROJECT_DIR$/parc_auto/views/vehicule_view.xml" />
-        <option value="$PROJECT_DIR$/parc_auto/__manifest__.py" />
         <option value="$PROJECT_DIR$/parc_auto/models/client.py" />
         <option value="$PROJECT_DIR$/parc_auto/views/client_view.xml" />
-        <option value="$PROJECT_DIR$/parc_auto/models/ordremission.py" />
-        <option value="$PROJECT_DIR$/parc_auto/views/ordremission_view.xml" />
         <option value="$PROJECT_DIR$/parc_auto/views/demande_view.xml" />
-        <option value="$PROJECT_DIR$/parc_auto/views/menu_view.xml" />
         <option value="$PROJECT_DIR$/parc_auto/models/demande.py" />
+        <option value="$PROJECT_DIR$/parc_auto/models/chauffeur.py" />
+        <option value="$PROJECT_DIR$/parc_auto/views/ordremission_view.xml" />
+        <option value="$PROJECT_DIR$/parc_auto/views/chauffeur_view.xml" />
+        <option value="$PROJECT_DIR$/parc_auto/__manifest__.py" />
+        <option value="$PROJECT_DIR$/parc_auto/views/menu_view.xml" />
+        <option value="$PROJECT_DIR$/parc_auto/models/ordremission.py" />
       </list>
     </option>
   </component>
@@ -167,10 +155,10 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="2229" />
-    <option name="y" value="-9" />
-    <option name="width" value="1536" />
-    <option name="height" value="830" />
+    <option name="x" value="2028" />
+    <option name="y" value="-16" />
+    <option name="width" value="1939" />
+    <option name="height" value="1049" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -246,7 +234,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.odoo-shell">
+  <component name="RunManager" selected="Python.odoo-gui">
     <configuration name="odoo-gui" type="PythonConfigurationType" factoryName="Python">
       <module name="packageDoc" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -312,15 +300,15 @@
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32946146" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49947917" weight="0.27560717" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49947917" visible="true" weight="0.26504752" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32831737" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13177083" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.140625" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" />
       <window_info anchor="right" id="SciView" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39915523" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -339,21 +327,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/parc_auto/models/demande.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="36" column="36" lean-forward="true" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
-          <folding>
-            <element signature="e#25#61#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/parc_auto/models/demande.py">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="20" column="71" selection-start-line="20" selection-start-column="71" selection-end-line="20" selection-end-column="71" />
-          <folding>
-            <element signature="e#25#61#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -602,20 +577,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/parc_auto/models/chauffeur.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="28" lean-forward="true" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/parc_auto/__manifest__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="27" column="21" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/parc_auto/models/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
@@ -627,6 +588,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
           <caret line="23" column="53" lean-forward="true" selection-start-line="23" selection-start-column="53" selection-end-line="23" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/parc_auto/views/client_view.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="833">
+          <caret line="49" column="43" selection-start-line="49" selection-start-column="43" selection-end-line="49" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/parc_auto/models/client.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="15" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="15" />
         </state>
       </provider>
     </entry>
@@ -646,60 +621,64 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/parc_auto/models/vehicule.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="66" selection-start-line="19" selection-start-column="66" selection-end-line="19" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/parc_auto/views/client_view.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="49" column="43" selection-start-line="49" selection-start-column="43" selection-end-line="49" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/parc_auto/views/ordremission_view.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="41" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
+        <state relative-caret-position="161">
+          <caret line="10" column="13" lean-forward="true" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/parc_auto/views/demande_view.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="44" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/parc_auto/views/menu_view.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="79" selection-start-line="10" selection-start-column="79" selection-end-line="10" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/parc_auto/models/ordremission.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/parc_auto/models/client.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="15" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="15" />
+        <state relative-caret-position="288">
+          <caret line="16" column="52" selection-start-line="16" selection-start-column="52" selection-end-line="16" selection-end-column="52" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/parc_auto/models/demande.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="138" selection-start-line="138" selection-end-line="138" />
-          <folding>
-            <element signature="e#25#61#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="198">
+          <caret line="22" column="11" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/parc_auto/views/ordremission_view.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="58" column="60" lean-forward="true" selection-start-line="58" selection-start-column="60" selection-end-line="58" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/parc_auto/__manifest__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="30" column="35" lean-forward="true" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/parc_auto/views/menu_view.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="125" selection-start-line="9" selection-start-column="125" selection-end-line="9" selection-end-column="125" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/parc_auto/models/chauffeur.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="29" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/parc_auto/views/chauffeur_view.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="31" column="21" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/parc_auto/models/ordremission.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="537">
+          <caret line="50" column="19" selection-start-line="50" selection-start-column="19" selection-end-line="50" selection-end-column="19" />
         </state>
       </provider>
     </entry>

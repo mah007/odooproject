@@ -15,7 +15,7 @@ class ordremission(models.Model):
         ('done', "Done"),
     ])
 
-    chauffeur_id=fields.Many2one('parcauto.chauffeur', 'Chauffeur',required=True)
+    chauffeur_id=fields.Many2one('parcauto.chauffeur', string="Chauffeur")
     # demande_id=fields.Many2one('parcauto.demande', 'Colis',required=True)
     vehicule_id=fields.Many2one('parcauto.vehicule',ondelete='set null', string="Véhicule",required=True, index=True)
     demande_ids = fields.One2many('parcauto.demande', 'ordremission_id', string="Demandes")
@@ -44,7 +44,11 @@ class ordremission(models.Model):
     def action_done(self):
         self.state = 'done'
 
-
+    @api.multi
+    def write(self, vals):
+        chauffeur = self.chauffeur_id
+        chauffeur.etat = 'mission'
+        return True
 
 
 

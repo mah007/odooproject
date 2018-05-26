@@ -53,9 +53,15 @@
                          <group string="Choix du Chauffeur">
                              <field name="chauffeur_id"  />
                          </group>
-                         <group string="Demandes">
-                             <field name="demande_ids"  />
-                         </group>
+                         <notebook>
+                             <page string="Demandes">
+                                 <field name="demande_ids">
+                                    <tree string="Demandes">
+                                        <field name="adresse"/>
+                                    </tree>
+                                 </field>
+                             </page>
+                         </notebook>
                          <group string="Départ">
                              <field name="create_date" string="Date Départ"/>
                          </group>

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from odoo import models, fields, api
+from odoo import models, fields, api, exceptions, _
 import math
 import json
 import geocoder
@@ -104,7 +104,7 @@ class demande(models.Model):
                     while not routing.IsEnd(index_next):
                         node_index = routing.IndexToNode(index)
                         node_index_next = routing.IndexToNode(index_next)
-                        route += str(node_index) + " -> "
+                        route += str(node_index) + ","
                         # Add the distance to the next node.
                         route_dist += dist_callback(node_index, node_index_next)
                         # Add demand.
@@ -114,27 +114,99 @@ class demande(models.Model):
 
                     node_index = routing.IndexToNode(index)
                     node_index_next = routing.IndexToNode(index_next)
-                    route += str(node_index) + " -> " + str(node_index_next)
+                    route += str(node_index) + "," + str(node_index_next)
                     route_dist += dist_callback(node_index, node_index_next)
-                    sresult += "Route for vehicle " + str(vehicle_nbr) + " : " + route + "\n"
-                    sresult += "Distance of route " + str(vehicle_nbr) + " : " + str(route_dist)
-                    sresult += "\nDemand met by vehicle " + str(vehicle_nbr) + " : " + str(route_demand) + "\n\n"
+                    sresult += route + "\n"
+                    sresult = sresult.replace("0,","").replace(",0","").replace("0\n","").replace("0\r","")
+                    fresult = sresult.split("\n")
+                    fresult = fresult[:-1]
             else:
-                sresult += 'No solution found.'
+                raise exceptions.except_orm(_("Error"),_("No solution availabe :(, please provide another vehicles"))
         else:
             sresult += 'Specify an instance greater than 0.'
-        file = open("/vagrant/cvrpresult.tmp", "w")
-        file.write(sresult)
-        file.close()
+
+        # file = open("/vagrant/cvrpresult.tmp", "w")
+        # file.write(json.dumps(fresult))
+        # file.close()
 
         self._cr.execute("rollback")
 
+        # les vehicules dispo
         vehicules_dispo = []
 
         self._cr.execute("SELECT id FROM parcauto_vehicule WHERE etat = 'disponible'")
 
         for veh in self.env.cr.fetchall():
             vehicules_dispo.append(int(veh[0]))
+
+        self._cr.execute("rollback")
+
+        # les demandes à livrer
+        self._cr.execute("SELECT d.id,d.adresse "
+                         "FROM parcauto_demande d "
+                         "LEFT JOIN parcauto_ordremission om ON om.id = d.ordremission_id "
+                         "WHERE d.state = 'paslivre' AND om.id IS NULL")
+
+        loc_temp1 = []
+        for res in self.env.cr.fetchall():
+            loc_temp1.append(res)
+
+        self._cr.execute("rollback")
+
+        if loc_temp1:
+
+            # tables de conversion entre id demande & index dans l'ordre de selection
+            ordre_demandes = [int(x[0]) for x in loc_temp1]
+
+            # max id ordre mission
+            self._cr.execute("SELECT MAX(id)+1 FROM parcauto_ordremission")
+
+            self._cr.execute("rollback")
+
+            for elem in fresult:
+                self._cr.execute("INSERT INTO parcauto_ordremission "
+                                 "(create_uid, "
+                                 "name, "
+                                 "vehicule_id,"
+                                 "ordre_id, "
+                                 "write_uid, "
+                                 "state, "
+                                 "write_date, "
+                                 "create_date) "
+                                 "SELECT 1, "
+                                 "       concat('OM-'::text,(Max(id)+1)::text), "
+                                 "" + str(vehicules_dispo[0]) + ","
+                                 "       concat('OM/'::text,(Max(id)+1)::text), "
+                                 "       1, "
+                                 "       'draft', "
+                                 "       now() at time zone 'utc', "
+                                 "       now() at time zone 'utc'  "
+                                 "FROM parcauto_ordremission "
+                                 "RETURNING Id")
+
+                om_id_t = self.env.cr.fetchall()
+                om_id = om_id_t[0][0]
+
+                self._cr.execute("commit")
+
+                self._cr.execute("UPDATE parcauto_vehicule SET etat='enmission' WHERE Id = " + str(vehicules_dispo[0]))
+
+                self._cr.execute("commit")
+
+                vehicules_dispo.pop(0)
+
+                te = elem.split(",")
+                te = map(int, te)
+                for el in te:
+                    query = "UPDATE parcauto_demande SET ordremission_id = " + str(om_id) + " WHERE Id = " + str(ordre_demandes[el-1])
+                    self._cr.execute(query)
+                    print query
+                    self._cr.execute("commit")
+
+        else:
+            print "no orders to deliver"
+            raise exceptions.except_orm(_("Alert"), _("no orders to deliver or vehicule routing has been already calculated"))
+
 
 
 
@@ -181,38 +253,34 @@ class CreateDemandCallback(object):
 
 def create_data_array(self):
     locations = [[float(33.573110), float(-7.589843)]]
-    self._cr.execute("SELECT id,adresse FROM parcauto_demande WHERE state = 'paslivre'")
+    self._cr.execute("SELECT d.id,d.adresse "
+                     "FROM parcauto_demande d "
+                     "LEFT JOIN parcauto_ordremission om ON om.id = d.ordremission_id "
+                     "WHERE d.state = 'paslivre' AND om.id IS NULL")
     loc_temp = []
     for res in self.env.cr.fetchall():
         loc_temp.append(res)
 
-    g = geocoder.mapquest([i[1] for i in loc_temp], method='batch', key='2M3DloLAMyAYBjIdZFBpS7HejnT00e8r')
+    if loc_temp:
 
-    ordre_demandes = [x[0] for x in loc_temp]
+        g = geocoder.mapquest([i[1] for i in loc_temp], method='batch', key='2M3DloLAMyAYBjIdZFBpS7HejnT00e8r')
 
-    file = open("/vagrant/ordre_demandes.tmp", "w")
-    file.write(json.dumps(ordre_demandes))
-    file.close()
+        for result in g:
+            locations.append([float(result.latlng[0]), float(result.latlng[1])])
 
-    for result in g:
-        locations.append([float(result.latlng[0]), float(result.latlng[1])])
+        ##############
 
-    file = open("/vagrant/locations.tmp", "w")
-    file.write(json.dumps(locations))
-    file.close()
+        self._cr.execute("rollback")
 
-    ##############
+        demands = [0]
+        self._cr.execute("SELECT d.poids_total "
+                         "FROM parcauto_demande d "
+                         "LEFT JOIN parcauto_ordremission om ON om.id = d.ordremission_id "
+                         "WHERE d.state = 'paslivre' AND om.id IS NULL")
+        for res in self.env.cr.fetchall():
+            demands.append(int(res[0]))
+        data = [locations, demands]
 
-    self._cr.execute("rollback")
-
-    demands = [0]
-    self._cr.execute("SELECT poids_total FROM parcauto_demande WHERE state = 'paslivre'")
-    for res in self.env.cr.fetchall():
-        demands.append(int(res[0]))
-
-    file = open("/vagrant/demands.tmp", "w")
-    file.write(json.dumps(demands))
-    file.close()
-
-    data = [locations, demands]
+    else:
+        data = [[], []]
     return data
