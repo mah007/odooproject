@@ -28,7 +28,6 @@ Support following feature:
     'data': [
         'views/web_map_templates.xml',
         'views/res_config_views.xml',
-        'views.xml'
     ],
     'qweb': [
         'static/src/xml/*.xml',

@@ -40,9 +40,10 @@
                 <button name="done" type="workflow"
                         string="Mark as done" states="confirmed"
                         class="oe_highlight" groups="parc_auto.group_livreur"/>
+                <button name="locate_demands" string="Route" type="object" class="oe_highlight"/>
                 <field name="state" widget="statusbar"/>
             </header>
-             <sheet>
+              <sheet>
                      <group>
                          <group string="Choix du Nom">
                              <field name="name"  />
@@ -57,7 +58,8 @@
                              <page string="Demandes">
                                  <field name="demande_ids">
                                     <tree string="Demandes">
-                                        <field name="adresse"/>
+                                        <field name="demande_id"/>
+                                        <field name="adresse" />
                                     </tree>
                                  </field>
                              </page>
@@ -69,14 +71,21 @@
                              <field name="create_date" string="Date Arrivée"/>
                          </group>
                      </group>
+                    <!-- <page string="Map" > -->
 
+                             <!-- <div style="left:0; top:0; width:100%; height:100%;"> -->
+                                <!-- <iframe src="http://www.playkeepout.com/" width="100%" height="100%" marginwidth="0" marginheight="0" frameborder="no" scrolling="no" style="border-width:0px;"> -->
+
+                                <!-- </iframe> -->
+                            <!-- </div> -->
+                   <!-- </page> -->
              </sheet>
         </form>
       </field>
     </record>
 
       <record id="ordremission_seq" model="ir.sequence">
-            <field name="name">ordremissione_sequencer</field>
+            <field name="name">ordremission_sequencer</field>
             <field name="code">ordremission.sequence</field>
             <field name="prefix">OM/</field>
             <field name="padding">1</field>

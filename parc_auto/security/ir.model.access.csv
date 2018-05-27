@@ -2,6 +2,9 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 ordremission_user,ordremission user,model_parcauto_ordremission,group_user,1,1,1,0
 ordremission_manager,ordremission manager,model_parcauto_ordremission,group_manager,1,1,0,0
 ordremission_livreur,ordremission livreur,model_parcauto_ordremission,group_livreur,1,1,0,0
+demande_user,demande user,model_parcauto_demande,group_user,1,1,1,0
+demande_manager,demande manager,model_parcauto_demande,group_manager,1,1,0,0
+demande_livreur,demande livreur,model_parcauto_demande,group_livreur,1,1,0,0
 chauffeur_user,chauffeur user,model_parcauto_chauffeur,group_user,1,1,1,0
 chauffeur_manager,chauffeur manager,model_parcauto_chauffeur,group_manager,1,1,0,0
 chauffeur_livreur,chauffeur livreur,model_parcauto_chauffeur,group_livreur,1,1,0,0
@@ -17,6 +20,3 @@ produit_livreur,produit livreur,model_parcauto_produit,group_livreur,1,1,0,0
 vehicule_user,vehicule user,model_parcauto_vehicule,group_user,1,1,1,0
 vehicule_manager,vehicule manager,model_parcauto_vehicule,group_manager,1,1,0,0
 vehicule_livreur,vehicule livreur,model_parcauto_vehicule,group_livreur,1,1,0,0
-
-
-
