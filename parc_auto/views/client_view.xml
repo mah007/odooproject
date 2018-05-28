@@ -30,7 +30,7 @@
                 <group>
                  <field name="name" />
                  <field name="prenom" />
-                 <field name="adresse_cli" />
+                 <field name="adresse_cli" widget="place_autocomplete"  />
                 </group>
              </sheet>
         </form>

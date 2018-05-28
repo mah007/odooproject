@@ -5,6 +5,7 @@ odoo.define('tree_menu.tree_view_button', function (require){
 var core = require('web.core');
 var ListView = require('web.ListView');
 var QWeb = core.qweb;
+var Model = require('web.Model');
 
 
 ListView.include({
@@ -12,22 +13,15 @@ ListView.include({
         render_buttons: function($node) {
                 var self = this;
                 this._super($node);
-                    this.$buttons.find('#cvrp').click(this.proxy('main'));
+                    this.$buttons.find('#cvrp').click(this.proxy('callmain'));
         },
 
-        main: function () {
-
-
-            this.do_action({
-                    type: "ir.actions.act_window",
-                    name: "ordremission",
-                    res_model: "parcauto.ordremission",
-                    views: [[false,'form']],
-                    target: 'current',
-                    view_type : 'form',
-                    view_mode : 'form',
-                    flags: {'form': {'action_buttons': true, 'options': {'mode': 'edit'}}}
-            });
+        callmain: function () {
+            new Model('parcauto.demande').call('main',[[]]).then(function(result)
+              {
+                console.log("hello world, I am working");
+              }
+            );
         }
 
 });

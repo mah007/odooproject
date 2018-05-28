@@ -2,7 +2,7 @@
 <template id="template" xml:space="preserve">
   <t t-extend="ListView.buttons">
 	<t t-jquery="button.o_list_button_add" t-operation="after">
-		  <button t-if="widget.model == 'parcauto.ordremission'" class="btn btn-primary btn-sm o_list_tender_button_create oe_highlight" type="object" id="cvrp" name="main">CVRP</button>
+		  <button t-if="widget.model == 'parcauto.demande'" class="btn btn-primary btn-sm o_list_tender_button_create oe_highlight" type="object" id="cvrp" name="main">CVRP</button>
 	</t>
   </t>
 </template>

@@ -20,7 +20,6 @@
             <field name="prix_total" sum="Total_prix" />
             <field name="create_date" string="Date de Demande" readonly="1"  />
             <field name="state" string="Etat" readonly="1"  />
-            <button name="main" string="CVRP" type="object"  />
 
         </tree>
       </field>

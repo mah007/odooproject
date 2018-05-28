@@ -36,6 +36,22 @@ class ordremission(models.Model):
     @api.multi
     def action_submit(self):
         self.state = 'submitted'
+        id_om = self.id
+        id_veh = self.vehicule_id
+        id_chauff = self.chauffeur_id
+
+        # le vehicule devient dispo
+        self._cr.execute("UPDATE parcauto_vehicule SET etat='disponible' WHERE Id = " + str(id_veh))
+        self._cr.execute("commit")
+
+        # le chaffeur devient dispo
+        self._cr.execute("UPDATE parcauto_chauffeur SET etat = 'disponible' WHERE id = " + str(id_chauff))
+        self._cr.execute("commit")
+
+        # le chaffeur devient dispo
+        self._cr.execute("UPDATE parcauto_demande SET state = 'livre' WHERE id = " + str(id_om))
+        self._cr.execute("commit")
+
 
     @api.multi
     def action_confirm(self):

@@ -1,5 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-vehicule_manager,vehicule manager,model_inter_vehicule_vehicule,inter_vehicule.group_manager,1,1,1,1
-famille_manager,famille manager,model_inter_vehicule_famille,inter_vehicule.group_manager,1,1,1,1
-piece_manager,piece manager,model_inter_vehicule_piece,inter_vehicule.group_manager,1,1,1,1
-matricule_manager,matricule manager,model_inter_vehicule_matricule,inter_vehicule.group_manager,1,1,1,1
