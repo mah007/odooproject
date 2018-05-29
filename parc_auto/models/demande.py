@@ -153,7 +153,7 @@ class demande(models.Model):
 
         self._cr.execute("rollback")
 
-        if loc_temp1:
+        if loc_temp1 and vehicules_dispo:
 
             # tables de conversion entre id demande & index dans l'ordre de selection
             ordre_demandes = [int(x[0]) for x in loc_temp1]
@@ -189,6 +189,23 @@ class demande(models.Model):
 
                 self._cr.execute("commit")
 
+                # get wkf_id
+
+                self._cr.execute("SELECT Id FROM wkf WHERE osv = 'parcauto.ordremission'")
+                wkf_id_t = self.env.cr.fetchall()
+                wkf_id = wkf_id_t[0][0]
+
+                self._cr.execute("commit")
+
+                #get wkf_activity
+
+                self._cr.execute("SELECT Id FROM wkf_activity WHERE name = 'Draft'")
+                wkf_act_t = self.env.cr.fetchall()
+                wkf_act = wkf_act_t[0][0]
+
+                self._cr.execute("commit")
+
+
                 # wkf_instance
                 self._cr.execute("INSERT INTO wkf_instance"
                                  "("
@@ -202,7 +219,7 @@ class demande(models.Model):
                                  "("
                                  "'parcauto.ordremission',"
                                  "1,"
-                                 "4,"
+                                 "" + str(wkf_id) +","
                                  "'active',"
                                  ""+ str(om_id) +""
                                  ")"
@@ -223,7 +240,7 @@ class demande(models.Model):
                                  ")"
                                  "VALUES"
                                  "("
-                                 "13,"
+                                 ""+ str(wkf_act) +","
                                  ""+ str(wkf_inst_id) +","
                                  "NULL,"
                                  "'complete'"

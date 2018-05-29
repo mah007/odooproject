@@ -58,7 +58,7 @@ class ordremission(models.Model):
         self._cr.execute("commit")
 
         # la demande passe en état livrée
-        self._cr.execute("UPDATE parcauto_demande SET state = 'livre' WHERE id = " + str(id_om))
+        self._cr.execute("UPDATE parcauto_demande SET state = 'livre' WHERE ordremission_id = " + str(id_om))
         self._cr.execute("commit")
 
     @api.multi
