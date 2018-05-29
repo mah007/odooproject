@@ -189,8 +189,50 @@ class demande(models.Model):
 
                 self._cr.execute("commit")
 
-                self._cr.execute("UPDATE parcauto_vehicule SET etat='enmission' WHERE Id = " + str(vehicules_dispo[0]))
+                # wkf_instance
+                self._cr.execute("INSERT INTO wkf_instance"
+                                 "("
+                                 "res_type,"
+                                 "uid,"
+                                 "wkf_id,"
+                                 "state,"
+                                 "res_id"
+                                 ")"
+                                 "VALUES"
+                                 "("
+                                 "'parcauto.ordremission',"
+                                 "1,"
+                                 "4,"
+                                 "'active',"
+                                 ""+ str(om_id) +""
+                                 ")"
+                                 "RETURNING Id")
 
+                wkf_inst_t = self.env.cr.fetchall()
+                wkf_inst_id = wkf_inst_t[0][0]
+
+                self._cr.execute("commit")
+
+                # wkf_workitem
+                self._cr.execute("INSERT INTO wkf_workitem"
+                                 "("
+                                 "act_id,"
+                                 "inst_id,"
+                                 "subflow_id,"
+                                 "state"
+                                 ")"
+                                 "VALUES"
+                                 "("
+                                 "13,"
+                                 ""+ str(wkf_inst_id) +","
+                                 "NULL,"
+                                 "'complete'"
+                                 ");")
+
+                self._cr.execute("commit")
+
+                # le vehicule passe en état mission
+                self._cr.execute("UPDATE parcauto_vehicule SET etat='enmission' WHERE Id = " + str(vehicules_dispo[0]))
                 self._cr.execute("commit")
 
                 vehicules_dispo.pop(0)

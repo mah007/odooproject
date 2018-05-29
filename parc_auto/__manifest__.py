@@ -20,7 +20,7 @@
     'version': '1.0',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','web'],
+    'depends': ['base'],
 
     # always loaded
     'data': [
@@ -37,7 +37,7 @@
         'security/ir.model.access.csv',
         'workflow/ordremission_workflow.xml',
         'views/tree_view_asset.xml',
-        'views/header.xml',
+        #'views/header.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
@@ -45,6 +45,6 @@
     ],
     'qweb':  [
         'static/src/xml/tree_view_button.xml',
-        'static/src/xml/gmap.xml'
+        #'static/src/xml/gmap.xml'
     ],
 }

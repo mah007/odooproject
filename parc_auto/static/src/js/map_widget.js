@@ -27,7 +27,7 @@ odoo.define('parc_auto.map_widget', function (require) {
             if(!this.$el || disp == 1){
                 return;
             }
-            
+
             disp = 1;
 
             $(self.$el.filter('.map-toggle')[0]).click(function () {
