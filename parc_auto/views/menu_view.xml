@@ -9,6 +9,10 @@
           <menuitem name="Clients" parent="parc_group_menu" id="client_menu_mainform" action="action_client_form" />
           <menuitem name="Chauffeurs" parent="parc_group_menu" id="chauffeur_menu_mainform" action="action_chauffeur_form" />
 
+      <menuitem name="Pneumatique" id="pneumatique_group_menu" parent="agence_menu" />
+        <menuitem name="Pneus" parent="pneumatique_group_menu" id="pneu_menu_mainform" action="action_pneu_form" />
+        <menuitem name="Fournisseurs" parent="pneumatique_group_menu" id="fournisseur_menu_mainform" action="action_fournisseur_form" />
+
       <menuitem name="Missions" id="mission_group_menu" parent="agence_menu" />
         <menuitem name="Produits" parent="mission_group_menu" id="produit_menu_mainform" action="action_produit_form" />
         <menuitem name="Demandes Clients" parent="mission_group_menu" id="demande_menu_mainform" action="action_demande_form" />

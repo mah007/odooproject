@@ -32,6 +32,8 @@
         'views/demande_view.xml',
         'views/ordremission_view.xml',
         'views/produit_view.xml',
+        'views/pneu_view.xml',
+        'views/fournisseur_view.xml',
         'views/cvrptrigger_view.xml',
         'security/groups.xml',
         'security/ir.model.access.csv',

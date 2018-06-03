@@ -2,19 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="977e636a-fda0-4732-83c3-eeb900a6ebd2" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parc_auto/models/chauffeur.py" beforeDir="false" afterPath="$PROJECT_DIR$/parc_auto/models/chauffeur.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parc_auto/models/fournisseur.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parc_auto/models/pneu.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parc_auto/views/fournisseur_view.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parc_auto/views/pneu_view.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parc_auto/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/parc_auto/__manifest__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parc_auto/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/parc_auto/models/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/parc_auto/models/demande.py" beforeDir="false" afterPath="$PROJECT_DIR$/parc_auto/models/demande.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/parc_auto/models/ordremission.py" beforeDir="false" afterPath="$PROJECT_DIR$/parc_auto/models/ordremission.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parc_auto/security/groups.xml" beforeDir="false" afterPath="$PROJECT_DIR$/parc_auto/security/groups.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parc_auto/security/ir.model.access.csv" beforeDir="false" afterPath="$PROJECT_DIR$/parc_auto/security/ir.model.access.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parc_auto/views/chauffeur_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/parc_auto/views/chauffeur_view.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parc_auto/views/client_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/parc_auto/views/client_view.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parc_auto/views/demande_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/parc_auto/views/demande_view.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/parc_auto/views/menu_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/parc_auto/views/menu_view.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parc_auto/views/ordremission_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/parc_auto/views/ordremission_view.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parc_auto/views/vehicule_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/parc_auto/views/vehicule_view.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -70,7 +66,7 @@
         <entry file="file://$PROJECT_DIR$/parc_auto/views/menu_view.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="252">
-              <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
+              <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -676,7 +672,7 @@
     <entry file="file://$PROJECT_DIR$/parc_auto/views/menu_view.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
-          <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
+          <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
         </state>
       </provider>
     </entry>
