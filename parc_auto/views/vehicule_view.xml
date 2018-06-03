@@ -37,7 +37,7 @@
                             <field name="marque"  />
                             <field name="modele"  />
                             <field name="activity"  />
-                            <field name="etat" />
+                            <field name="etat" attrs="{'readonly':[('etat', '=', 'enmission')]}" />
                             <field name="age"  />
                             <field name="compteur"  />
 

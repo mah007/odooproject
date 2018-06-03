@@ -1,7 +1,6 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 ordremission_user,ordremission user,model_parcauto_ordremission,group_user,1,1,1,0
 ordremission_manager,ordremission manager,model_parcauto_ordremission,group_manager,1,1,0,0
-ordremission_livreur,ordremission livreur,model_parcauto_ordremission,group_livreur,1,1,0,0
 demande_user,demande user,model_parcauto_demande,group_user,1,1,1,0
 demande_manager,demande manager,model_parcauto_demande,group_manager,1,1,0,0
 demande_livreur,demande livreur,model_parcauto_demande,group_livreur,1,1,0,0

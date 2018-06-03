@@ -12,14 +12,14 @@
 
         <tree string="demande" >
             <field name="demande_id"  />
-            <field name="client_id"  invisible="1" />
             <field name="produit_id" string="Produits"/>
             <field name="adresse" string="Adresse"/>
             <field name="poids_total" sum="Total_poids"  />
             <field name="volume_total" sum="Total_volume" />
             <field name="prix_total" sum="Total_prix" />
-            <field name="create_date" string="Date de Demande" readonly="1"  />
+            <field name="date_demande" string="Date de Demande" readonly="1"  />
             <field name="state" string="Etat" readonly="1"  />
+            <field name="frais_livraison" string="Frais de livraison (DH)" readonly="1"  />
 
         </tree>
       </field>
@@ -38,13 +38,14 @@
                          <group>
                             <group string="Demande de Clients">
                                 <field name="client_id"/>
-                                <field name="create_date" string="Date de Demande"/>
+                                <field name="date_demande" string="Date de Demande"/>
                             </group>
                             <group string="Details de Marchandise">
                                 <field name="produit_id" />
                                 <field name="volume_total"/>
                                 <field name="poids_total" string="Poids(KG)"/>
                                 <field name="prix_total"/>
+                                <field name="frais_livraison"/>
                             </group>
                         </group>
 
@@ -53,6 +54,26 @@
         </form>
       </field>
     </record>
+
+      <record id="view_graph_demandes" model="ir.ui.view">
+          <field name="name">parcauto.demande.graph</field>
+          <field name="model">parcauto.demande</field>
+          <field name="view_mode">tree</field>
+          <field name="arch" type="xml">
+              <graph type="bar">
+                <field name="date_demande" />
+                <field name="frais_livraison" type="measure" />
+              </graph>
+          </field>
+      </record>
+
+        <record id="action_demande_graph" model="ir.actions.act_window">
+            <field name="name">Frais par mois</field>
+            <field name="res_model">parcauto.demande</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">graph</field>
+            <field name="view_id" ref="view_graph_demandes"/>
+        </record>
 
 
       <record id="demande_seq" model="ir.sequence">

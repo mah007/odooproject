@@ -21,6 +21,8 @@ class ordremission(models.Model):
     vehicule_id=fields.Many2one('parcauto.vehicule',ondelete='set null', string="Véhicule",required=True, index=True)
     demande_ids = fields.One2many('parcauto.demande', 'ordremission_id', string="Demandes")
 
+    login_chauffeur = fields.Char(related='chauffeur_id.login', ondelete='set null', store=True)
+
 
     @api.model
     def create(self, vals):
@@ -96,7 +98,7 @@ class ordremission(models.Model):
                 astr = ",['"+str(names[x])+"',"+str(g.latlng[0])+","+str(g.latlng[1])+","+str((x+2))+"]"
                 param += astr
 
-            param += ",['Agence',33.573110,-7.589843,"+str(len(names)+2)+"]"
+            # param += ",['Agence',33.573110,-7.589843,"+str(len(names)+2)+"]"
 
 
             url = '/parcauto/gmdirection?locations='+param

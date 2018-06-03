@@ -15,6 +15,7 @@ class demande(models.Model):
 
     state = fields.Selection([
         ('paslivre', "Pas livrée"),
+        ('encours', "En cours"),
         ('livre', "Livrée"),
     ], default='paslivre')
 
@@ -23,8 +24,12 @@ class demande(models.Model):
     adresse = fields.Char(related='client_id.adresse_cli', ondelete='set null', store=True)
     adr_temp = fields.Char(related='client_id.adresse_cli')
 
+    date_demande = fields.Date(required=True)
+
     poids_total = fields.Integer(compute='_sum_poids_total',store=True)
     prix_total = fields.Integer(compute='_sum_prix_total',store=True)
+
+    frais_livraison = fields.Float(compute='_sum_frais_livraison',store=True, string="Frais de livraison (DH)")
 
     client_id = fields.Many2one('parcauto.client', ondelete='set null', string="Client", index=True, required=True)
     produit_id = fields.Many2one('parcauto.produit', ondelete='set null', string="Produit", index=True, required=True)
@@ -33,23 +38,70 @@ class demande(models.Model):
     p_prix_unit = fields.Integer(related='produit_id.prix_unit')
     p_poids_unit = fields.Integer(related='produit_id.poids_unit')
 
-    @api.depends('client_id','adr_temp')
-    def _sum_prix_total(self):
-        self.adresse = self.adr_temp
 
+    # adresse client = adresse livraison
+    # @api.depends('client_id','adr_temp')
+    # def _sum_prix_total(self):
+    # self.adresse = self.adr_temp
+
+    # prix total
     @api.depends('volume_total', 'p_prix_unit')
     def _sum_prix_total(self):
         self.prix_total = self.volume_total * self.p_prix_unit
 
+    # poids total
     @api.depends('volume_total', 'p_poids_unit')
     def _sum_poids_total(self):
         self.poids_total = self.volume_total * self.p_poids_unit
 
+    # calcul frais de livraison
+    @api.depends('volume_total', 'poids_total')
+    def _sum_frais_livraison(self):
+        frais = 0
+        if(self.volume_total > 0 and self.volume_total < 10):
+            frais += 15
+        if(self.volume_total >= 10 and self.volume_total < 20):
+            frais += 30
+        if(self.volume_total >= 20 and self.volume_total < 40):
+            frais += 45
+        if(self.volume_total >= 40 and self.volume_total < 60):
+            frais += 65
+        if(self.volume_total >= 60 and self.volume_total < 90):
+            frais += 90
+        if(self.volume_total >= 90):
+            frais += 1.2 * self.volume_total
+
+        if (self.poids_total > 0 and self.poids_total < 10):
+            frais += 15
+        if (self.poids_total >= 10 and self.poids_total < 20):
+            frais += 30
+        if (self.poids_total >= 20 and self.poids_total < 40):
+            frais += 45
+        if (self.poids_total >= 40 and self.poids_total < 60):
+            frais += 65
+        if (self.poids_total >= 60 and self.poids_total < 100):
+            frais += 90
+        if (self.poids_total >= 100):
+            frais += 1.1 * self.poids_total
+
+        self.frais_livraison = frais
+
+    # sequence
     @api.model
     def create(self, vals):
         dem = self.env['ir.sequence'].next_by_code('demande.sequence') or '/'
         vals['demande_id'] = dem
-        return super(demande, self).create(vals)
+        record = super(demande, self).create(vals)
+        if record.poids_total > 1000:
+           raise exceptions.ValidationError('Total weight can not exceed 1000!')
+        return record
+
+    @api.multi
+    def write(self, vals):
+        record = super(demande, self).write(vals)
+        if self.poids_total > 1000:
+            raise exceptions.ValidationError('Total weight can not exceed 1000!')
+        return record
 
     @api.multi
     def main(self):
@@ -63,6 +115,7 @@ class demande(models.Model):
         self._cr.execute("SELECT COUNT(*) FROM parcauto_vehicule WHERE etat = 'disponible'")
         num_vehicles_t = self.env.cr.fetchall()
         num_vehicles = int(num_vehicles_t[0][0])
+        self._cr.execute("rollback")
         sresult = ''
 
         # Create routing model.
@@ -129,8 +182,6 @@ class demande(models.Model):
         # file.write(json.dumps(fresult))
         # file.close()
 
-        self._cr.execute("rollback")
-
         # les vehicules dispo
         vehicules_dispo = []
 
@@ -159,9 +210,9 @@ class demande(models.Model):
             ordre_demandes = [int(x[0]) for x in loc_temp1]
 
             # max id ordre mission
-            self._cr.execute("SELECT MAX(id)+1 FROM parcauto_ordremission")
+            # self._cr.execute("SELECT MAX(id)+1 FROM parcauto_ordremission")
 
-            self._cr.execute("rollback")
+            # self._cr.execute("rollback")
 
             for elem in fresult:
                 self._cr.execute("INSERT INTO parcauto_ordremission "
@@ -240,13 +291,13 @@ class demande(models.Model):
                 te = elem.split(",")
                 te = map(int, te)
                 for el in te:
-                    query = "UPDATE parcauto_demande SET ordremission_id = " + str(om_id) + " WHERE Id = " + str(ordre_demandes[el-1])
+                    query = "UPDATE parcauto_demande SET ordremission_id = " + str(om_id) + " , state = 'encours' WHERE Id = " + str(ordre_demandes[el-1])
                     self._cr.execute(query)
                     print query
                     self._cr.execute("commit")
+                raise exceptions.Warning('Vehicle routing succesfuly calculated!')
 
         else:
-            print "no orders to deliver"
             raise exceptions.except_orm(_("Alert"), _("no orders to deliver or vehicule routing has been already calculated"))
 
 

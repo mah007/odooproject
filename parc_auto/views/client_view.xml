@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
   <data>
-    <record model="ir.ui.view" id="agence_tree_view">
+    <record model="ir.ui.view" id="client_tree_view">
       <field name="name">client.tree</field>
       <field name="model">parcauto.client</field>
       <field name="type">tree</field>
@@ -25,12 +25,13 @@
       <field name="type">form</field>
 
       <field name="arch" type="xml">
-        <form string="agence">
+        <form string="client">
              <sheet>
                 <group>
+                 <field name="client_id" readonly="1" />
                  <field name="name" />
                  <field name="prenom" />
-                 <field name="adresse_cli" widget="place_autocomplete"  />
+                 <field name="adresse_cli" />
                 </group>
              </sheet>
         </form>

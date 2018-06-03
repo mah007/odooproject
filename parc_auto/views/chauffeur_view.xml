@@ -12,6 +12,7 @@
 
             <field name="name"  />
             <field name="fname"  />
+            <field name="login"  />
             <field name="etat" />
 
         </tree>
@@ -29,7 +30,8 @@
                  <group>
                      <field name="name"  />
                      <field name="fname"  />
-                     <field name="etat" />
+                     <field name="login"  />
+                     <field name="etat" attrs="{'readonly':[('etat', '=', 'mission')]}" />
                  </group>
              </sheet>
         </form>

@@ -71,14 +71,6 @@
                              <field name="create_date" string="Date Arrivée"/>
                          </group>
                      </group>
-                    <!-- <page string="Map" > -->
-
-                             <!-- <div style="left:0; top:0; width:100%; height:100%;"> -->
-                                <!-- <iframe src="http://www.playkeepout.com/" width="100%" height="100%" marginwidth="0" marginheight="0" frameborder="no" scrolling="no" style="border-width:0px;"> -->
-
-                                <!-- </iframe> -->
-                            <!-- </div> -->
-                   <!-- </page> -->
              </sheet>
         </form>
       </field>
