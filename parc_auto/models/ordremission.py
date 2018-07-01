@@ -23,6 +23,9 @@ class ordremission(models.Model):
 
     login_chauffeur = fields.Char(related='chauffeur_id.login', ondelete='set null', store=True)
 
+    date_depart = fields.Datetime(required=True)
+    date_arrivee = fields.Datetime()
+
 
     @api.model
     def create(self, vals):
@@ -61,6 +64,10 @@ class ordremission(models.Model):
 
         # la demande passe en état livrée
         self._cr.execute("UPDATE parcauto_demande SET state = 'livre' WHERE ordremission_id = " + str(id_om))
+        self._cr.execute("commit")
+
+        # la date de livraison de l'om
+        self._cr.execute("UPDATE parcauto_ordremission SET date_arrivee = now() at time zone 'utc' WHERE id = " + str(id_om))
         self._cr.execute("commit")
 
     @api.multi

@@ -65,10 +65,10 @@
                              </page>
                          </notebook>
                          <group string="Départ">
-                             <field name="create_date" string="Date Départ"/>
+                             <field name="date_depart" string="Date Départ"/>
                          </group>
                          <group string="Arrivée">
-                             <field name="create_date" string="Date Arrivée"/>
+                             <field name="date_arrivee" string="Date Arrivée" readonly="1"/>
                          </group>
                      </group>
              </sheet>

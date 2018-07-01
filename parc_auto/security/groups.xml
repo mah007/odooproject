@@ -16,8 +16,9 @@
         <record id="view_ir_rule_restrict_livreurs" model="ir.rule">
             <field name="name">Restrict livreurs to see only their om</field>
             <field name="model_id" ref="model_parcauto_ordremission"/>
+            <field name="groups" eval="[(4, ref('parc_auto.group_livreur'))]"/>
             <field name="domain_force">[('login_chauffeur','=',user.login)]</field>
-        </record>-->
+        </record>
 
     </data>
 </odoo>
